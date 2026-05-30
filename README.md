@@ -3,9 +3,9 @@
 
 ## About the Project
 
-Brain tumors are among the most life-threatening medical conditions, where early and accurate detection directly impacts patient survival. Manual analysis of MRI scans is time-consuming and highly dependent on specialist expertise. This project addresses that challenge by building an AI-powered segmentation pipeline that automatically detects and localizes tumor regions from MRI scans.
+Brain tumors represent one of the most lethal forms of cancer and the benefit of early detection cannot be overstated. Manual analysis of MRI is time-consuming and reliant on specialist skill. This project solves that problem by creating an AI segmentation pipeline which automatically identifies and localizes tumor areas from MRI scans.
 
-Using a U-Net deep learning architecture, the model was trained and evaluated on two publicly available datasets — Figshare and BraTS 2020. The same model architecture was applied to both datasets, with only the input channels differing. The significant performance gap between the two reveals how much the quality and richness of imaging data influences model outcomes. Beyond just classification, this project performs pixel-level segmentation — identifying exactly where in the scan the tumor is located, which is far more clinically useful than a simple yes/no prediction.
+The model was trained on the U-Net deep learning architecture and tested on two publicly available datasets, Figshare and BraTS 2020. We used the same model architecture for both datasets with a variation in input channels. This huge performance difference shows how much the quantity and quality of imaging data affects model output. This project does pixelwise, rather than blurry classification, it tells you exactly where in the scan the tumor is, which is much more useful from a clinical perspective than just a yes/no answer.
 
 ---
 
@@ -42,8 +42,7 @@ BrainTumorDetection/
 │   ├── brats_sample.png
 │   ├── prediction_results.png
 │   ├── brats_results.png
-│   └── training_progress.png
-│
+│    
 └── README.md
 ```
 
@@ -83,12 +82,6 @@ MRI scan alongside its doctor-labeled tumor mask and the AI-predicted mask. The 
 ![BraTS Sample](outputs/brats_sample.png)
 
 BraTS scans include four MRI sequences per slice. Each sequence highlights different tissue properties, giving the model substantially more information to identify tumor boundaries accurately.
-
-**Training Progress**
-
-![Training Progress](outputs/training_progress.png)
-
-Loss and Dice Score curves across epochs for both models. Both converge smoothly with no signs of overfitting, thanks to early stopping and dropout regularization.
 
 **Prediction Results — Figshare**
 
@@ -162,11 +155,11 @@ MyDrive/brain_tumor_project/
 
 ## Conclusions
 
-This project demonstrates that deep learning-based MRI segmentation can achieve strong tumor detection performance when provided with sufficient imaging data. The U-Net architecture proved effective for both single-channel and multi-channel inputs, with the BraTS model achieving 93.64% Dice Score — a clinically meaningful result.
+These results indicate that deep learning approaches for MRI tumor segmentation yield high clinical performance when given sufficient imaging data. Therefore, the U-Net architecture was suitable for single-channel and multi-channel inputs, since the BraTS model achieved a Dice Score of 93.64% which is a clinically-relevant outcome.
 
-The most significant finding is that model architecture alone does not determine performance. The quality and depth of the input data matters just as much. Moving from one MRI channel to four resulted in a 31.81% improvement in Dice Score without any change to the model design.
+Something of extreme importance that we found in this analysis is that performance does not depend solely on model architecture. Importance of Input Data: Just like output, the input data matters too. A better improvement I had from going from one MRI channel to 4 was a 31.81% increase in Dice Score with no model design change
 
-Limitations include the use of 2D slice-based segmentation rather than full 3D volumetric analysis, and the fact that models were trained on public benchmark data rather than real clinical scans. Future work could explore 3D U-Net architectures, multi-class tumor region segmentation, and deployment as a clinical decision support tool.
+Other limitations are the use of 2D slice-based segmentation instead of full 3D volumetric analysis, and the training of models on public benchmark data rather than real clinical scans. In future work, I plan to explore 3D U-Net architectures, segmentation of multi-class tumor regions and deployment as a clinical decision support tool.
 
 ---
 
@@ -194,4 +187,4 @@ Python · TensorFlow/Keras · h5py · scikit-image · NumPy · Matplotlib · Goo
 ## Contact
 
 For any questions, feedback, or collaboration opportunities, please reach out at:
-**mohammad-yasir-siddiqui.x@rennes-sb.com**
+**yasirfcb14@gmail.com**
